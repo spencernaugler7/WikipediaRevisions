@@ -1,48 +1,33 @@
 # Project Report
-
-(Put your name here)
-
-## Markdown Tips
-
-If you are unfamiliar with MarkDown, check out 
-[the official documentation](https://guides.github.com/features/mastering-markdown/).
-
-Note that IntelliJ IDEA has a Markdown preview that you can access in 
-the upper-right of the editor. Also, since Markdown documents&mdash;like
-source code&mdash;should be human-readable, make sure you keep your lines
-short, as you can see I have done in my Markdown files.
-
-Please remove this subsection before submitting your report. 
+Spencer Naugler
 
 ## Challenge #1 Complete
 
-(Explain your solution to Challenge #1. If it is not complete, change
-the subsection title above to "Incomplete" and explain how far you got
-and where you got stuck.)
+I changed a binding in the Guice config class QueryEngineModule,
+from FakeQueryEngine.class to WikipediaQueryEngine.class
 
 ## Challenge #2 Complete
 
-(Explain your solution to Challenge #2. If it is not complete, change
-the subsection title above to "Incomplete" and explain how far you got
-and where you got stuck.)
+I added a general Formatter structure that is implemented by the old formatter
+and the new CleanRevision formatter that also created.
+I made a new state variable in WikipediaAnalyser that allows me to inject the formatter instead of declaring it elsewhere.
+
+I wanted to change how the revision is formatted, so I modified the DateTimeFormatter a bit.
+I just had it construct a format using non-military time, ISO standard dates, and the author of the revision listed first. 
+
 
 ## Challenge #3 Complete
 
-(Explain your solution to Challenge #3. If it is not complete, change
-the subsection title above to "Incomplete" and explain how far you got
-and where you got stuck.)
+I made a resultant string using the reduce function in java's Stream api.
+the entire list is reduced into a single string Nice!!
 
 ## Reflection Question #1: Functional vs OO
 
-(Write one or more paragraphs comparing and contrasting the iterative and functional  
-approaches to string concatenation you explored in challenge #3. Which do you
-prefer, and why?)
+Due to my experience programming being mostly in an iterative style I would still program in this way.
+but I see the benefits of functional programming, there is no chance of concurrency issues which are a huge deal.
 
 ## Reflection Question #2: Polymorphism and Dependency Inversion
 
-(Explain how polymorphism engendered dependency inversion in this little
-application. Be clear and precise here, as this is, in part, an assessment of
-your correct use of technical terminology.
-Consider, for example, where exactly is polymorphism used?
-Where exactly is a dependency inverted?)
-
+In this solution a polymorphic structure Formatter gave rise to dependency inversion. 
+Instead of tailoring the program to work with every kind of Formatter I will make, I just have it work with a generalized formatter.
+I have created a dependency inversion because higher order objects no longer rely on any individual lower order formatter.
